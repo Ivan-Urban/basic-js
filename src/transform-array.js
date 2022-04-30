@@ -38,18 +38,6 @@ function transform(arr) {
   return resultArr
 }
 
-// const arr = [1, 2, 3, '--double-next', 1337, '--discard-prev', 4, 5];
-
-// const resultArr = arr.map((el, index) => {
-//   if (arr[index - 1] == '--discard-next') return undefined;
-//   if (arr[index + 1] == '--discard-prev') return undefined;
-//   if (el == '--double-next') return arr[index + 1];
-//   if ((el == '--double-prev') && (arr[index-2] != '--discard-next')) return arr[index - 1];
-//   return el
-// })
-
-// console.log(resultArr);
-
 module.exports = {
   transform
 };
