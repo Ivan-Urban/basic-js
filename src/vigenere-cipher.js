@@ -106,39 +106,6 @@ class VigenereCipheringMachine {
   }
 }
 
-// const a = new VigenereCipheringMachine(true);
-
-// a.encrypt();
-
-
-
-// // 0 19 19 0 2 10   0 19    3 0 22 13
-
-// // 0 11 15 7 14 13  18 4    0 11 15 7
-
-// // 0 4  8  7 16 23  18 23   3 11 11 20
-
-// let strAlpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
-// let str = 'Example of sequence: 1, 2, 3, 4.';
-// str = str.toUpperCase();
-
-// let strKey = 'alphonse';
-
-// while (str.length > strKey.length) {
-//   strKey += strKey;
-// }
-
-// for (let i = 0; i < str.length; i++) {
-//   if (!strAlpha.includes(str[i])) {
-//     strKey = strKey.slice(0, i) + str[i] + strKey.slice(i, str.length);
-//   }
-// }
-
-// strKey = strKey.slice(0, str.length);
-
-// console.log(strKey);
-
 module.exports = {
   VigenereCipheringMachine
 };
