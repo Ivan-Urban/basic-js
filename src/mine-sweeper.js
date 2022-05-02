@@ -23,9 +23,44 @@ const { NotImplementedError } = require('../extensions/index.js');
  *  [1, 1, 1]
  * ]
  */
-function minesweeper(/* matrix */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+function minesweeper(matrix) {
+  //throw new NotImplementedError('Not implemented');
+  const resMatrix = [];
+  for (let i = 0; i < matrix.length; i++) {
+    resMatrix.push([]);
+  }
+  console.log(resMatrix);
+  matrix.forEach((el, i) => {
+    el.forEach((elem, index) => {
+      let n = 0;
+      if (i == 0) {
+        if (el[index - 1] == true) n++;
+        if (el[index + 1] == true) n++;
+        if (matrix[i + 1][index - 1] == true) n++;
+        if (matrix[i + 1][index] == true) n++;
+        if (matrix[i + 1][index + 1] == true) n++;
+      }
+      if ((i > 0) && (i < matrix.length - 1)) {
+        if (el[index - 1] == true) n++;
+        if (el[index + 1] == true) n++;
+        if (matrix[i + 1][index - 1] == true) n++;
+        if (matrix[i + 1][index] == true) n++;
+        if (matrix[i + 1][index + 1] == true) n++; 
+        if (matrix[i - 1][index - 1] == true) n++;
+        if (matrix[i - 1][index] == true) n++;
+        if (matrix[i - 1][index + 1] == true) n++;
+      }
+      if (i == matrix.length - 1) {
+        if (el[index - 1] == true) n++;
+        if (el[index + 1] == true) n++;
+        if (matrix[i - 1][index - 1] == true) n++;
+        if (matrix[i - 1][index] == true) n++;
+        if (matrix[i - 1][index + 1] == true) n++;
+      }
+      resMatrix[i][index] = n;
+    });
+  });
+  return resMatrix;
 }
 
 module.exports = {
